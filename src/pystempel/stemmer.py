@@ -18,7 +18,7 @@ limitations under the License.
 import gzip
 import os
 import struct
-from importlib.resources import Package, Resource
+from importlib.resources import Package
 from pathlib import Path
 from typing import Union
 
@@ -49,7 +49,7 @@ class Stemmer:
         return cls.from_resource(file_resources, "stemmer_polimorf.tbl.gz")
 
     @classmethod
-    def from_resource(cls, file_resources: Package, fname: Resource):
+    def from_resource(cls, file_resources: Package, fname):
         """
         Construct a stemmer using stemming table from a given file in the
         stempel package.
