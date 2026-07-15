@@ -38,7 +38,7 @@ keywords = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.8,<4.0"
+python = ">=3.13,<4.0"
 tqdm = "^4.65.0"
 sortedcontainers = "^2.4.0"
 
@@ -46,7 +46,7 @@ sortedcontainers = "^2.4.0"
 pyjnius = "^1.4.2"
 smart-open = "^6.3.0"
 tqdm = "^4.65.0"
-jupyterlab = "^3.6.1"
+jupyterlab = "^4.6.1"
 pandas = "^1.5.3"
 matplotlib = "^3.7.1"
 twine = "^4.0.2"
