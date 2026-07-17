@@ -39,21 +39,23 @@ keywords = [
 
 [tool.poetry.dependencies]
 python = ">=3.13,<4.0"
-tqdm = "^4.65.0"
+tqdm = "^4.68.4"
 sortedcontainers = "^2.4.0"
+cffi = {path = "../pystempel_fork/cffi-1.16.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", develop = true}
+pyzmq = {path = "../pystempel_fork/pyzmq-26.0.3-cp312-cp312-manylinux_2_28_x86_64.whl", develop = true}
 
 [tool.poetry.group.dev.dependencies]
-pyjnius = "^1.4.2"
-smart-open = "^6.3.0"
-tqdm = "^4.65.0"
+pyjnius = "^1.7.0"
+smart-open = "^8.0.0"
+tqdm = "^4.68.4"
 jupyterlab = "^4.6.1"
-pandas = "^1.5.3"
-matplotlib = "^3.7.1"
-twine = "^4.0.2"
-pre-commit = "^3.1.1"
-pytest = "^7.2.2"
-black = "^23.1.0"
+pandas = "^3.0.3"
+matplotlib = "^3.11.0"
+twine = "^6.2.0"
+pre-commit = "^4.6.0"
+pytest = "^9.1.1"
+black = "^26.5.1"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=2.4.1"]
 build-backend = "poetry.core.masonry.api"
