@@ -41,8 +41,9 @@ keywords = [
 python = ">=3.13,<4.0"
 tqdm = "^4.68.4"
 sortedcontainers = "^2.4.0"
-cffi = {path = "../pystempel_fork/cffi-1.16.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", develop = true}
-pyzmq = {path = "../pystempel_fork/pyzmq-26.0.3-cp312-cp312-manylinux_2_28_x86_64.whl", develop = true}
+#for local use
+#cffi = {path = "../pystempel_fork/cffi-1.16.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", develop = true}
+#pyzmq = {path = "../pystempel_fork/pyzmq-26.0.3-cp312-cp312-manylinux_2_28_x86_64.whl", develop = true}
 
 [tool.poetry.group.dev.dependencies]
 pyjnius = "^1.7.0"
