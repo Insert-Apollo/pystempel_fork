@@ -1,31 +1,11 @@
-[tool.poetry]
-name = "pystempel"
+[project]
+name = "Pystempel_fork"
 version = "2.0.0"
-packages = [ {include = "pystempel", from= "src"}]
-exclude = ["**/*.tbl"]
-license = "See documentation"
-readme = "README.rst"
 description = "Polish stemmer."
-authors = ["Maciej Gawinecki <mgawinecki@gmail.com>"]
-classifiers = [
-        "Intended Audience :: Developers",
-        "Intended Audience :: Education",
-        "Intended Audience :: Information Technology",
-        "Intended Audience :: Science/Research",
-        "Operating System :: POSIX :: Linux",
-        "Operating System :: MacOS :: MacOS X",
-        "Operating System :: Microsoft :: Windows",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3 :: Only",
-        "Topic :: Scientific/Engineering",
-        "Topic :: Scientific/Engineering :: Artificial Intelligence",
-        "Topic :: Scientific/Engineering :: Human Machine Interfaces",
-        "Topic :: Scientific/Engineering :: Information Analysis",
-        "Topic :: Text Processing",
-        "Topic :: Text Processing :: General",
-        "Topic :: Text Processing :: Linguistic"
-]
+authors = [{ name = "Maciej Gawinecki", email = "mgawinecki@gmail.com" }]
+requires-python = ">=3.13"
+readme = "README.rst"
+license = "See documentation"
 keywords = [
     "NLP",
     "natural language processing",
@@ -36,24 +16,61 @@ keywords = [
     "natural language",
     "text analytics",
 ]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Human Machine Interfaces",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Text Processing",
+    "Topic :: Text Processing :: General",
+    "Topic :: Text Processing :: Linguistic",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "tqdm>=4.68.4,<5",
+    "sortedcontainers>=2.4.0,<3",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.13,<4.0"
-tqdm = "^4.65.0"
-sortedcontainers = "^2.4.0"
+[dependency-groups]
+dev = [
+    "pyjnius>=1.7.0,<2",
+    "smart-open>=8.0.0,<9",
+    "tqdm>=4.68.4,<5",
+    "jupyterlab>=4.6.1,<5",
+    "pandas>=3.0.3,<4",
+    "matplotlib>=3.11.0,<4",
+    "twine>=6.2.0,<7",
+    "pre-commit>=4.6.0,<5",
+    "pytest>=9.1.1,<10",
+    "black>=26.5.1,<27",
+    "jupyter-core>=5.9.1,<6",
+]
 
-[tool.poetry.group.dev.dependencies]
-pyjnius = "^1.4.2"
-smart-open = "^6.3.0"
-tqdm = "^4.65.0"
-jupyterlab = "^4.6.1"
-pandas = "^1.5.3"
-matplotlib = "^3.7.1"
-twine = "^4.0.2"
-pre-commit = "^3.1.1"
-pytest = "^7.2.2"
-black = "^23.1.0"
+[tool.uv]
+default-groups = "all"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/pystempel"]
+exclude = ["**/*.tbl"]
+
+[tool.hatch.build.targets.wheel]
+include = ["src/pystempel"]
+exclude = ["**/*.tbl"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src/pystempel" = "pystempel"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
