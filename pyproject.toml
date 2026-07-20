@@ -3,9 +3,8 @@ name = "Pystempel_fork"
 version = "2.0.0"
 description = "Polish stemmer."
 authors = [{ name = "Maciej Gawinecki", email = "mgawinecki@gmail.com" }]
-requires-python = ">=3.13"
+requires-python = ">=3.14.3"
 readme = "README.rst"
-license = "See documentation"
 keywords = [
     "NLP",
     "natural language processing",
@@ -55,10 +54,22 @@ dev = [
     "pytest>=9.1.1,<10",
     "black>=26.5.1,<27",
     "jupyter-core>=5.9.1,<6",
+    "argon2-cffi-bindings>=25.1.0",
+    "cryptography>=49.0.0",
+    "cffi",
+    "pyzmq"
 ]
 
 [tool.uv]
 default-groups = "all"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.extra-build-dependencies]
+pystempel-fork = ["hatchling"]
 
 [tool.hatch.build.targets.sdist]
 include = ["src/pystempel"]
@@ -71,6 +82,4 @@ exclude = ["**/*.tbl"]
 [tool.hatch.build.targets.wheel.sources]
 "src/pystempel" = "pystempel"
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+
