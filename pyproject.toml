@@ -3,7 +3,7 @@ name = "Pystempel_fork"
 version = "2.0.0"
 description = "Polish stemmer."
 authors = [{ name = "Maciej Gawinecki", email = "mgawinecki@gmail.com" }]
-requires-python = ">=3.14.3"
+requires-python = ">=3.13.12"
 readme = "README.rst"
 keywords = [
     "NLP",
